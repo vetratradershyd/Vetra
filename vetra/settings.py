@@ -24,7 +24,14 @@ load_dotenv(BASE_DIR / ".env")
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-SECRET_KEY = os.getenv("qk&k5ekfet!ms%t3xshk+=3*kepg75x923od96mqgvl)vaz-y9")
+# SECRET_KEY = os.getenv("qk&k5ekfet!ms%t3xshk+=3*kepg75x923od96mqgvl)vaz-y9")
+
+
+
+SECRET_KEY = os.getenv(
+    "SECRET_KEY",
+    "qk&k5ekfet!ms%t3xshk+=3*kepg75x923od96mqgvl)vaz-y9"
+)
 # SECRET_KEY = ''
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -189,3 +196,5 @@ SECURE_HSTS_PRELOAD = True
 SECURE_SSL_REDIRECT = False
 SESSION_COOKIE_SECURE = False
 CSRF_COOKIE_SECURE = False
+
+SECURE_PROXY_SSL_HEADER = None
