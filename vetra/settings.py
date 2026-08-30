@@ -34,7 +34,7 @@ DEBUG = os.getenv("DEBUG", "False") == "True"
 ALLOWED_HOSTS = [
     "localhost",
     "127.0.0.1",
-    'vetra-48bz.onrender.com',
+    "vetra-48bz.onrender.com",
 ]
 
 
@@ -172,12 +172,17 @@ REST_FRAMEWORK = {
 
 # Production security settings
 
-SECURE_SSL_REDIRECT = True
+# SECURE_SSL_REDIRECT = True
 
-SESSION_COOKIE_SECURE = True
+# SESSION_COOKIE_SECURE = True
 
-CSRF_COOKIE_SECURE = True
+# CSRF_COOKIE_SECURE = True
 
 SECURE_HSTS_SECONDS = 31536000
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 SECURE_HSTS_PRELOAD = True
+
+
+SECURE_SSL_REDIRECT = False
+SESSION_COOKIE_SECURE = False
+CSRF_COOKIE_SECURE = False
