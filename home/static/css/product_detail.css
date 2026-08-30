@@ -1,0 +1,53 @@
+.product-detail{
+
+    padding:140px 0 80px;
+
+    background:#010101;
+
+}
+
+.product-detail-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:60px;
+
+    align-items:center;
+
+}
+
+.product-detail img{
+
+    width:100%;
+
+    border-radius:15px;
+
+}
+
+.product-info h1{
+
+    font-size:3rem;
+
+    margin:15px 0;
+
+}
+
+.product-info .price{
+
+    color:#C59B67;
+
+    margin-bottom:25px;
+
+}
+
+.product-info p{
+
+    color:#A8A8A8;
+
+    line-height:1.8;
+
+    margin-bottom:35px;
+
+}

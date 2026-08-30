@@ -1,0 +1,62 @@
+{% load static %}
+<section class="products section" id="products">
+
+    <div class="container">
+
+        <span class="section-subtitle">
+            OUR PRODUCTS
+        </span>
+
+        <h2 class="section-title">
+            Smart Home Solutions
+        </h2>
+
+        <div class="product-grid">
+
+            {% for product in products %}
+
+            <div class="product-card">
+
+                <div class="product-image">
+
+                    <img src="{{ product.image.url }}"
+                         alt="{{ product.name }}">
+
+                </div>
+
+                <div class="product-content">
+
+                    <h3>{{ product.name }}</h3>
+
+                    {% comment %} <p>
+                        {{ product.description|truncatewords:15 }}
+                    </p> {% endcomment %}
+
+                    <div class="product-footer">
+
+                        {% comment %} <span class="price">
+                            {{ product.price }}
+                        </span> {% endcomment %}
+
+
+                        <a href="{% url 'product_detail' product.slug %}" class="btn-small">
+                               View Details
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            {% empty %}
+
+            <h3>No products available.</h3>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</section>

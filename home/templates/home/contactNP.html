@@ -1,0 +1,150 @@
+{% extends "home/base.html" %}
+
+
+{% block content %}
+
+
+<section class="contact section" id="contact">
+
+    <div class="container">
+
+        <span class="section-subtitle">
+            CONTACT US
+        </span>
+
+        <h2 class="section-title">
+            Let's Build Your Smart Home
+        </h2>
+
+        <div class="contact-container">
+
+            <!-- Contact Info -->
+
+            <div class="contact-info">
+
+                <div class="info-box-out">
+                    <a class="info-box">
+
+                        <i class="fas fa-location-dot"></i>
+
+                        <div>
+                            <h3>Address</h3>
+                            <p>Hyderabad, Telangana, India</p>
+                        </div>
+
+                    </a>
+
+                </div>
+
+
+                <div class="info-box-out">
+                    <a href="mailto:vetratradershyd@gmail.com" class="info-box">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>vetratradershyd@gmail.com</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="info-box-out">
+                    <a href="tel:+919063472951" class="info-box">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Phone</h3>
+                            <p>+91 9063472951</p>
+                        </div>
+                    </a>
+                </div>
+
+              
+
+                <div class="info-box-out">
+
+                    <a href="https://wa.me/919063472951"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="info-box">
+
+                        <i class="fab fa-whatsapp"></i>
+
+                        <div>
+                            <h3>WhatsApp</h3>
+                            <p>Chat with our experts(Click On it)</p>
+                        </div>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- Contact Form -->
+
+
+             {% if request.GET.success %}
+                    <div class="success-message">
+                        <i class="bi bi-check-circle-fill"></i>
+                        Request sent successfully!
+                    </div>
+            {% endif %}
+
+        
+
+            <form method="POST" action="{% url 'home' %}#contact" class="contact-form" id="contact-form">
+
+                {% csrf_token %}
+                
+
+
+               
+
+                <input
+                    type="text"
+                    name="name"
+                    placeholder="Your Name"
+                    required>
+
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="Email"
+                    autocomplete="email"
+                    required>
+
+                <input
+                    type="tel"
+                    name="phone"
+                    placeholder="Phone Number"
+                    autocomplete="tel"
+                    inputmode="numeric"
+                    maxlength="10"
+                    minlength="10"
+                    pattern="(\+91[0-9]{10}|[0-9]{10})"
+                    required>
+
+
+                <textarea
+                    name="message"
+                    placeholder="Your Message"
+                    rows="6"
+                    required></textarea>
+
+                <button
+                    type="submit"
+                    class="btn btn-gold">
+
+                    Send Inquiry
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+{% endblock content %}

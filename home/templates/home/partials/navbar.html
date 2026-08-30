@@ -1,0 +1,41 @@
+{% load static %}
+
+<header class="header">
+
+    <nav class="navbar container">
+
+        <!-- Logo -->
+        <a href="{% url 'home' %}" class="logo">
+            <img src="{% static 'images/vetra_name_logo.png' %}" alt="VETRA Logo">
+            <!-- Or use text if no logo -->
+            <!-- <h2>VETRA</h2> -->
+            {% comment %} <h2>VETRA</h2> {% endcomment %}
+        </a>
+
+        <!-- Navigation -->
+        <ul class="nav-menu">
+
+            <li><a href="#hero" class="nav-link active">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#products" class="nav-link">Products</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+
+        </ul>
+
+        <!-- CTA -->
+        <a href="#contact" class="btn-primary">
+            Get Quote
+        </a>
+
+        <!-- Mobile Menu -->
+        <div class="hamburger">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </div>
+
+    </nav>
+
+</header>

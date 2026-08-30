@@ -1,0 +1,62 @@
+{% extends "home/base.html" %}
+
+{% block title %}
+{{ product.name }} | VETRA
+{% endblock %}
+
+{% block content %}
+
+<section class="product-detail section">
+
+    <div class="container">
+
+        <div class="product-detail-grid">
+
+            <div class="product-image">
+
+                <img src="{{ product.image.url }}"
+                     alt="{{ product.name }}">
+
+            </div>
+
+            <div class="product-info">
+
+                <span class="section-subtitle">
+
+                    {{ product.category.name }}
+
+                </span>
+
+                <h1>
+
+                    {{ product.name }}
+
+                </h1>
+
+                {% comment %} <h2 class="price">
+
+                    {{ product.price }}
+
+                </h2> {% endcomment %}
+
+                <p>
+
+                    {{ product.description }}
+
+                </p>
+
+                <a href="{% url 'contact' %}" class="btn btn-gold">
+
+                    Request Quote
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,95 @@
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+    background:#010101;
+    color:#F5F5F5;
+
+}
+
+a{
+
+    text-decoration:none;
+
+}
+
+img{
+
+    max-width:100%;
+    display:block;
+
+}
+
+.container{
+
+    width:min(90%,1200px);
+    margin:auto;
+
+}
+
+
+
+/* for hero template */
+
+/*=========================
+Buttons
+=========================*/
+
+.btn{
+
+    display:inline-block;
+
+    padding:14px 32px;
+
+    border-radius:30px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.btn-gold{
+
+    background:#C59B67;
+
+    color:#010101;
+
+}
+
+.btn-gold:hover{
+
+    transform:translateY(-3px);
+
+    background:#C59B67;
+
+}
+
+.btn-outline{
+
+    border:2px solid #F5F5F5;
+
+    color:#F5F5F5;
+
+}
+
+.btn-outline:hover{
+
+    background:#F5F5F5;
+
+    color:#010101;
+
+}
