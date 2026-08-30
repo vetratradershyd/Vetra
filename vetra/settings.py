@@ -31,7 +31,11 @@ SECRET_KEY = os.getenv("qk&k5ekfet!ms%t3xshk+=3*kepg75x923od96mqgvl)vaz-y9")
 # DEBUG = False
 DEBUG = os.getenv("DEBUG", "False") == "True"
 
-ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
+ALLOWED_HOSTS = [
+    "localhost",
+    "127.0.0.1",
+    'vetra-48bz.onrender.com',
+]
 
 
 # Application definition
