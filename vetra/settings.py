@@ -71,7 +71,16 @@ INSTALLED_APPS = [
     'home',
     'rest_framework',
     'django_filters',
+    "cloudinary",
+    "cloudinary_storage",
 ]
+
+
+CLOUDINARY_STORAGE = {
+    "CLOUD_NAME": os.getenv("CLOUDINARY_CLOUD_NAME",'t6v1vbdd'),
+    "API_KEY": os.getenv("CLOUDINARY_API_KEY",'764647498787321'),
+    "API_SECRET": os.getenv("CLOUDINARY_API_SECRET",'pu6ibmkbqIjMN1ZvzK5Bn8tOInA'),
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -171,15 +180,25 @@ MEDIA_ROOT = BASE_DIR / "media"
 TEMPLATES[0]["DIRS"] = []
 
 
+# STORAGES = {
+#     "default": {
+#         "BACKEND": "django.core.files.storage.FileSystemStorage",
+#     },
+#     "staticfiles": {
+#         "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+#     },
+# }
+
+
+
 STORAGES = {
     "default": {
-        "BACKEND": "django.core.files.storage.FileSystemStorage",
+        "BACKEND": "cloudinary_storage.storage.MediaCloudinaryStorage",
     },
     "staticfiles": {
         "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
     },
 }
-
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
