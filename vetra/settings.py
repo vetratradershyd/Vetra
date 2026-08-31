@@ -35,11 +35,20 @@ SECRET_KEY = os.getenv(
 # SECRET_KEY = ''
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 # DEBUG = os.getenv("DEBUG", "False") == "True"
 
 
 ALLOWED_HOSTS = ["*"]
+
+
+ALLOWED_HOSTS = [
+    "vetra-48bz.onrender.com",
+    "www.vetratraders.com",
+    "vetratraders.com",
+    "vetratradershyd.com",
+    "127.0.0.1",
+]
 
 # ALLOWED_HOSTS = [
 #     "localhost",
@@ -70,6 +79,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'vetra.urls'
@@ -151,6 +162,16 @@ MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
 
 TEMPLATES[0]["DIRS"] = []
+
+
+STORAGES = {
+    "default": {
+        "BACKEND": "django.core.files.storage.FileSystemStorage",
+    },
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+    },
+}
 
 
 # Default primary key field type
