@@ -31,25 +31,33 @@ load_dotenv(BASE_DIR / ".env")
 
 
 SECRET_KEY = os.getenv(
-    "SECRET_KEY",
-    "qk&k5ekfet!ms%t3xshk+=3*kepg75x923od96mqgvl)vaz-y9"
+    "SECRET_KEY"
 )
 # SECRET_KEY = ''
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-# DEBUG = os.getenv("DEBUG", "False") == "True"
+# DEBUG = False
+DEBUG = os.getenv("DEBUG", "False") == "True"
 
 
-ALLOWED_HOSTS = ["*"]
+# ALLOWED_HOSTS = ["*"]
 
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://vetra-48bz.onrender.com",
+    "https://www.vetratraders.com",
+    "https://vetratraders.com",
+]
+
+
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
 
 ALLOWED_HOSTS = [
     "vetra-48bz.onrender.com",
     "www.vetratraders.com",
     "vetratraders.com",
     "vetratradershyd.com",
-    "127.0.0.1",
 ]
 
 # ALLOWED_HOSTS = [
@@ -77,9 +85,9 @@ INSTALLED_APPS = [
 
 
 CLOUDINARY_STORAGE = {
-    "CLOUD_NAME": os.getenv("CLOUDINARY_CLOUD_NAME",'t6v1vbdd'),
-    "API_KEY": os.getenv("CLOUDINARY_API_KEY",'764647498787321'),
-    "API_SECRET": os.getenv("CLOUDINARY_API_SECRET",'pu6ibmkbqIjMN1ZvzK5Bn8tOInA'),
+    "CLOUD_NAME": os.getenv("CLOUDINARY_CLOUD_NAME"),
+    "API_KEY": os.getenv("CLOUDINARY_API_KEY"),
+    "API_SECRET": os.getenv("CLOUDINARY_API_SECRET"),
 }
 
 MIDDLEWARE = [
@@ -235,13 +243,15 @@ REST_FRAMEWORK = {
 
 # CSRF_COOKIE_SECURE = True
 
-SECURE_HSTS_SECONDS = 31536000
+
+# SECURE_HSTS_SECONDS = 31536000
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 SECURE_HSTS_PRELOAD = True
 
 
-SECURE_SSL_REDIRECT = False
-SESSION_COOKIE_SECURE = False
-CSRF_COOKIE_SECURE = False
 
-SECURE_PROXY_SSL_HEADER = None
+SECURE_SSL_REDIRECT = os.getenv("SECURE_SSL_REDIRECT", "False") == "True"
+SESSION_COOKIE_SECURE = os.getenv("SESSION_COOKIE_SECURE", "False") == "True"
+CSRF_COOKIE_SECURE = os.getenv("CSRF_COOKIE_SECURE", "False") == "True"
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+SECURE_HSTS_SECONDS = 0
